@@ -15,6 +15,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+    void showAboutDialog();
+    void showOpenFileDialog();
+
+protected:
+    void openFile(const QString &fileName);
+
 private:
     Ui::MainWindow *ui;
 };
