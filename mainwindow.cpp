@@ -3,6 +3,7 @@
 
 #include <QFile>
 #include <QFileDialog>
+#include <QMessageBox>
 
 #include <vtkDataSetReader.h>
 
@@ -20,7 +21,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::showAboutDialog()
 {
-  //
+  QMessageBox::information(this, "About", "By Martijn Koopman.\nSource code available under Apache License 2.0.");
 }
 
 void MainWindow::showOpenFileDialog()
