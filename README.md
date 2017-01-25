@@ -5,7 +5,7 @@ A CMake project for embedding a VTK 3D view in a Qt window.
 
 ## Prerequisites
 - Qt 5.x downloaded
-- VTK 7.x source downloaded & compiled. See [Build-VTK.md](Build-VTK.md) for a guide to compile VTK.
+- VTK 7.x source downloaded & compiled. See [Build-VTK.md](doc/Build-VTK.md) for a guide to compile VTK.
 
 ## Usage
 1. Clone or download this repository
