@@ -36,7 +36,7 @@ Set the following values when asked for:
 
 
 | Name | Value |
-| -- | -- |
+| --- | --- |
 | VTK_RENDERING_BACKEND | OpenGL2 |
 | VTK_Group_Qt | ON |
 | VTK_QT_VERSION | 5 |
