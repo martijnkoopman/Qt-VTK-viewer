@@ -1,5 +1,5 @@
-# Building VTK 7.1 with Qt 5.7
-This guide will help you build VTK 7.1 with Qt 5.7. 
+# Building VTK 7.1 with Qt 5.8
+This guide will help you build VTK 7.1 with Qt 5.8. 
 This procedure has been tested on Windows 10 and Debian based Linux.
 
 ## Prerequisites
@@ -40,8 +40,8 @@ Set the following values when asked for:
 | VTK_RENDERING_BACKEND | OpenGL2 |
 | VTK_Group_Qt | ON |
 | VTK_QT_VERSION | 5 |
-| QMAKE | \<QT-DIR\>/5.7/\<COMPILER\>bin/qmake |
-| Qt5_DIR | \<QT-DIR\>/5.7/\<COMPILER\>/lib/cmake/Qt5 |
+| QMAKE | \<QT-DIR\>/5.8/\<COMPILER\>bin/qmake |
+| Qt5_DIR | \<QT-DIR\>/5.8/\<COMPILER\>/lib/cmake/Qt5 |
 | VTK_BUILD_QT_DESIGNER_PLUGIN | ON |
 | Module_vtkGUISupportQtOpenGL | ON |
 
