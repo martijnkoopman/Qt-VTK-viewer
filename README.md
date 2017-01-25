@@ -17,6 +17,9 @@ A CMake project for embedding a VTK 3D view in a Qt window.
 
 Done. Happy coding :)
 
+## A note on QVTKWidget
+QVTKWidget is a QWidget provided by VTK, but QWidget has no support for OpenGL. QVTKWidget2 is a QGLWidget provided by VTK that has support for OpenGL. However, QGLWidget is deprecated since Qt version 5.4 and QOpenGLWidget should be used in new code.  QVTKWidget3 is a QOpenGLWidget provided in this repository for that purpose.
+
 ## License
 This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details.
 
