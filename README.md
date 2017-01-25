@@ -13,7 +13,11 @@ A CMake project for embedding a VTK 3D view in a Qt window.
 	2. Specify VTK_DIR
 4. Build project
 
-Done. Happy coding
+Done. Happy coding :)
 
 ## License
 This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+- QVTKWidget3 from [custusx.org](http://www.custusx.org/)
+- Icons from [icons8.com](https://icons8.com/)
