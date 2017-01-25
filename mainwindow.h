@@ -9,21 +9,27 @@ class MainWindow;
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+  explicit MainWindow(QWidget *parent = 0);
+  ~MainWindow();
 
 public slots:
-    void showAboutDialog();
-    void showOpenFileDialog();
+  /// Show the 'About this application' dialog
+  void showAboutDialog();
+
+  /// Show the 'Open file...' dialog
+  void showOpenFileDialog();
 
 protected:
-    void openFile(const QString &fileName);
+  /// Open a file
+  ///
+  /// \param[in] fileName The name of the file including the path
+  void openFile(const QString &fileName);
 
 private:
-    Ui::MainWindow *ui;
+  Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
