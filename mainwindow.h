@@ -16,16 +16,17 @@ public:
   ~MainWindow();
 
 public slots:
-  /// Show the 'About this application' dialog
+  //! Show the 'About this application' dialog
   void showAboutDialog();
 
-  /// Show the 'Open file...' dialog
+  //! Show the 'Open file...' dialog
   void showOpenFileDialog();
 
 protected:
-  /// Open a file
-  ///
-  /// \param[in] fileName The name of the file including the path
+  //! Open a file
+  /*!
+    \param[in] fileName The name of the file including the path
+  */
   void openFile(const QString &fileName);
 
 private:

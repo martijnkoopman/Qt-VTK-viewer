@@ -6,8 +6,12 @@
 #include <vtkProperty.h>
 #include <vtkDataSetMapper.h>
 
-SceneWidget::SceneWidget(QWidget *parent) : QVTKWidget3(parent)
+SceneWidget::SceneWidget(QWidget *parent)
+  : QVTKOpenGLWidget(parent)
 {
+  vtkNew<vtkGenericOpenGLRenderWindow> window;
+  SetRenderWindow(window.Get());
+
   // Camera
   vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
   camera->SetViewUp(0,1,0);
@@ -17,7 +21,7 @@ SceneWidget::SceneWidget(QWidget *parent) : QVTKWidget3(parent)
   // Renderer
   m_renderer = vtkSmartPointer<vtkRenderer>::New();
   m_renderer->SetActiveCamera(camera);
-  m_renderer->SetBackground(0.345, 0.376, 0.404);
+  m_renderer->SetBackground(0.5, 0.5, 0.5);
   GetRenderWindow()->AddRenderer(m_renderer);
 }
 
@@ -34,7 +38,7 @@ void SceneWidget::addDataSet(vtkSmartPointer<vtkDataSet> dataSet)
   m_renderer->AddActor(actor);
   m_renderer->ResetCamera(dataSet->GetBounds());
 
-  update();
+  renderVTK();
 }
 
 
@@ -46,7 +50,7 @@ void SceneWidget::removeDataSet()
     m_renderer->RemoveActor(actor);
   }
 
-  update();
+  renderVTK();
 }
 
 void SceneWidget::zoomToExtent()
@@ -58,5 +62,5 @@ void SceneWidget::zoomToExtent()
     m_renderer->ResetCamera(actor->GetBounds());
   }
 
-  update();
+  renderVTK();
 }
