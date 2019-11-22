@@ -1,12 +1,12 @@
 #ifndef SCENEWIDGET_H
 #define SCENEWIDGET_H
 
-#include <QVTKOpenGLWidget.h>
+#include <QVTKOpenGLNativeWidget.h>
 #include <vtkSmartPointer.h>
 #include <vtkRenderer.h>
 #include <vtkDataSet.h>
 
-class SceneWidget : public QVTKOpenGLWidget
+class SceneWidget : public QVTKOpenGLNativeWidget
 {
   Q_OBJECT
 public:

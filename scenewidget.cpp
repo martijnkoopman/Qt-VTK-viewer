@@ -7,7 +7,7 @@
 #include <vtkDataSetMapper.h>
 
 SceneWidget::SceneWidget(QWidget *parent)
-  : QVTKOpenGLWidget(parent)
+  : QVTKOpenGLNativeWidget(parent)
 {
   vtkNew<vtkGenericOpenGLRenderWindow> window;
   SetRenderWindow(window.Get());
@@ -40,7 +40,6 @@ void SceneWidget::addDataSet(vtkSmartPointer<vtkDataSet> dataSet)
 
   renderVTK();
 }
-
 
 void SceneWidget::removeDataSet()
 {
