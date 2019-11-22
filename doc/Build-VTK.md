@@ -40,7 +40,7 @@ Set the following values when asked for:
 | VTK_RENDERING_BACKEND | OpenGL2 |
 | VTK_Group_Qt | ON |
 | VTK_QT_VERSION | 5 |
-| Qt5_DIR | \<QT-DIR\>/5.11.0/\<COMPILER\>/lib/cmake/Qt5 |
+| Qt5_DIR | \<QT-DIR\>/5.13.2/\<COMPILER\>/lib/cmake/Qt5 |
 | VTK_BUILD_QT_DESIGNER_PLUGIN | ON |
 | Module_vtkGUISupportQtOpenGL | ON |
 
