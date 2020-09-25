@@ -1,9 +1,9 @@
 # Building VTK 9.0 with Qt 5.15
 This guide will help you build VTK 9.0 with Qt 5.15. 
-This procedure has been tested on Windows 10 and Debian based Linux.
+This procedure has been tested on Windows 10 and Debian-based Linux.
 
 ## Prerequisites
-- CMake 2.8.11+ installed
+- CMake 3.8+ installed
 
 - Qt 5.x downloaded. 
 The Qt directory will be refered to as \<QT-DIR\>
@@ -42,6 +42,7 @@ Set the following values when asked for:
 | VTK_Group_Qt | YES |
 | VTK_MODULE_ENABLE_VTK_GUISupportQt | YES |
 | CMAKE_BUILD_TYPE | Release |
+
 Enable 'advanced' to see all entries and specify other Qt entries if they are not found automatically.
 
 **6. Generate project**
