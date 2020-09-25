@@ -7,30 +7,29 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
-  Q_OBJECT
+class MainWindow : public QMainWindow {
+    Q_OBJECT
 
 public:
-  explicit MainWindow(QWidget *parent = 0);
-  ~MainWindow();
+    explicit MainWindow(QWidget* parent = 0);
+    ~MainWindow();
 
 public slots:
-  //! Show the 'About this application' dialog
-  void showAboutDialog();
+    //! Show the 'About this application' dialog
+    void showAboutDialog();
 
-  //! Show the 'Open file...' dialog
-  void showOpenFileDialog();
+    //! Show the 'Open file...' dialog
+    void showOpenFileDialog();
 
 protected:
-  //! Open a file
-  /*!
+    //! Open a file
+    /*!
     \param[in] fileName The name of the file including the path
   */
-  void openFile(const QString &fileName);
+    void openFile(const QString& fileName);
 
 private:
-  Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
 };
 
 #endif // MAINWINDOW_H

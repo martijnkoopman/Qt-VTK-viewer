@@ -7,53 +7,52 @@
 
 #include <vtkDataSetReader.h>
 
-MainWindow::MainWindow(QWidget *parent) :
-  QMainWindow(parent),
-  ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget* parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
-  ui->setupUi(this);
+    ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
-  delete ui;
-}
+MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::showAboutDialog()
 {
-  QMessageBox::information(this, "About", "By Martijn Koopman.\nSource code available under Apache License 2.0.");
+    QMessageBox::information(
+        this, "About",
+        "By Martijn Koopman.\nSource code available under Apache License 2.0.");
 }
 
 void MainWindow::showOpenFileDialog()
 {
-  QString fileName = QFileDialog::getOpenFileName(this, tr("Open file"), "", "VTK Files (*.vtk)");
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open file"), "",
+        "VTK Files (*.vtk)");
 
-  // Open file
-  QFile file(fileName);
-  file.open(QIODevice::ReadOnly);
+    // Open file
+    QFile file(fileName);
+    file.open(QIODevice::ReadOnly);
 
-  // Return on Cancel
-  if (!file.exists())
-    return;
+    // Return on Cancel
+    if (!file.exists())
+        return;
 
-  openFile(fileName);
+    openFile(fileName);
 }
 
-void MainWindow::openFile(const QString &fileName)
+void MainWindow::openFile(const QString& fileName)
 {
-  ui->sceneWidget->removeDataSet();
+    ui->sceneWidget->removeDataSet();
 
-  // Create reader
-  vtkSmartPointer<vtkDataSetReader> reader = vtkSmartPointer<vtkDataSetReader>::New();
-  reader->SetFileName(fileName.toStdString().c_str());
+    // Create reader
+    vtkSmartPointer<vtkDataSetReader> reader = vtkSmartPointer<vtkDataSetReader>::New();
+    reader->SetFileName(fileName.toStdString().c_str());
 
-  // Read the file
-  reader->Update();
+    // Read the file
+    reader->Update();
 
-  // Add data set to 3D view
-  vtkSmartPointer<vtkDataSet> dataSet = reader->GetOutput();
-  if (dataSet != nullptr)
-  {
-    ui->sceneWidget->addDataSet(reader->GetOutput());
-  }
+    // Add data set to 3D view
+    vtkSmartPointer<vtkDataSet> dataSet = reader->GetOutput();
+    if (dataSet != nullptr) {
+        ui->sceneWidget->addDataSet(reader->GetOutput());
+    }
 }

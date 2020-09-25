@@ -5,13 +5,13 @@
 
 #include <QVTKOpenGLNativeWidget.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+    QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
 
-  QApplication a(argc, argv);
-  MainWindow w;
-  w.show();
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
-  return a.exec();
+    return a.exec();
 }

@@ -1,5 +1,5 @@
-# Building VTK 8.2 with Qt 5.13
-This guide will help you build VTK 8.2 with Qt 5.13. 
+# Building VTK 9.0 with Qt 5.15
+This guide will help you build VTK 9.0 with Qt 5.15. 
 This procedure has been tested on Windows 10 and Debian based Linux.
 
 ## Prerequisites
@@ -37,13 +37,11 @@ Set the following values when asked for:
 
 | Name | Value |
 | --- | --- |
-| VTK_RENDERING_BACKEND | OpenGL2 |
-| VTK_Group_Qt | ON |
-| VTK_QT_VERSION | 5 |
-| Qt5_DIR | \<QT-DIR\>/5.13.2/\<COMPILER\>/lib/cmake/Qt5 |
-| VTK_BUILD_QT_DESIGNER_PLUGIN | ON |
-| Module_vtkGUISupportQtOpenGL | ON |
-
+| VTK_GROUP_ENABLE_Qt | YES |
+| Qt5_DIR | \<QT-DIR\>/5.15.1/\<COMPILER\>/lib/cmake/Qt5 |
+| VTK_Group_Qt | YES |
+| VTK_MODULE_ENABLE_VTK_GUISupportQt | YES |
+| CMAKE_BUILD_TYPE | Release |
 Enable 'advanced' to see all entries and specify other Qt entries if they are not found automatically.
 
 **6. Generate project**
