@@ -41,7 +41,8 @@ Set the following values when asked for:
 | Qt5_DIR | \<QT-DIR\>/5.15.1/\<COMPILER\>/lib/cmake/Qt5 |
 | VTK_Group_Qt | YES |
 | VTK_MODULE_ENABLE_VTK_GUISupportQt | YES |
-| CMAKE_BUILD_TYPE | Release |
+| CMAKE_BUILD_TYPE (Linux only, Makefiles) | Release |
+| CMAKE_CONFIGURATION_TYPES (Windows only, MSVC) | Release |
 
 Enable 'advanced' to see all entries and specify other Qt entries if they are not found automatically.
 

@@ -18,7 +18,7 @@ A CMake/C++ project for embedding a VTK 3D view in a Qt window.
 Done. Happy coding :)
 
 ## License
-This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 - Icons from [icons8.com](https://icons8.com/)
