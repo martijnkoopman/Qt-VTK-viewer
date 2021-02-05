@@ -23,10 +23,18 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 # Find package VTK
-find_package(VTK REQUIRED)
+find_package(VTK
+    9.0
+    REQUIRED
+    COMPONENTS
+        GUISupportQt
+        IOLegacy)
 
 # Build executable
 add_executable(QtVtkViewer WIN32 ${Sources} ${Headers} ${Resources} ${UIs})
 
-# Link libraries
-target_link_libraries(QtVtkViewer Qt5::Widgets Qt5::OpenGL ${VTK_LIBRARIES})
+target_link_libraries(QtVtkViewer PRIVATE Qt5::Widgets Qt5::OpenGL VTK::GUISupportQt VTK::IOLegacy)
+
+vtk_module_autoinit(
+    TARGETS QtVtkViewer
+    MODULES VTK::GUISupportQt VTK::IOLegacy)
